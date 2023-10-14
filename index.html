@@ -1,0 +1,76 @@
+<!-- index.html (pagina di inserimento password) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inserisci la Password</title>
+    <!-- Collegamento al font "IM Fell DW Pica" da Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+
+    <style>
+        /* Stile per il corpo del documento */
+        body {
+            font-family: 'IM Fell DW Pica', serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Stile per il modulo di inserimento password */
+        #password-form {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        /* Stile del campo password */
+        #password-input {
+            width: 100%;
+            padding: 10px 5px; /* Regola il padding per spostare il campo a sinistra */
+            font-size: 16px;
+        }
+
+        /* Stile del pulsante di invio */
+        #submit-button {
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="password-form">
+        <h1>Inserisci la Password</h1>
+        <form onsubmit="return checkPassword();" action="contenutoProtetto.html">
+            <input type="password" id="password-input" placeholder="Password" required>
+            <button type="submit" id="submit-button">Accedi</button>
+        </form>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password-input").value;
+
+            // Sostituisci 'passwordcorretta' con la tua password corretta
+            if (password === 'martina') {
+                return true; // Consentire l'accesso a contenutoProtetto.html
+            } else {
+                alert("Password errata. Riprova."); // Mostrare un messaggio di errore
+                return false; // Bloccare l'invio del modulo
+            }
+        }
+    </script>
+</body>
+</html>
